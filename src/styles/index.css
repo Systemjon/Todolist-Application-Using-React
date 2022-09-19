@@ -1,16 +1,6 @@
-
-/* 
-
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
-
+body {
+    background: rgb(229, 229, 229);
+}
 .list-group-item  {
     align-items: center;
     margin: auto;
@@ -18,7 +8,6 @@
 ul, input{
     width: 400px;
 }
-
 .btn-light{
 color: white;
 margin-right: auto;
@@ -30,4 +19,12 @@ margin-right: auto;
 .boton {
     display: flex;
     justify-content: end;
+}
+.contador {
+    font-size: x-small; 
+    display: flex;
+    justify-content: initial;
+}
+.Todo {
+    font-family: cursive
 }

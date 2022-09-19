@@ -7,7 +7,8 @@ import React, { useState } from 'react';
 export function App () {
 	const [list, setList]= useState([]);
 	const [input, setInput]= useState("");
-
+    const [count, setCount] = useState(0);
+    
     const addTodo = (todo) => {
         const newTodo = {
             id: Math.random(),
@@ -37,8 +38,9 @@ export function App () {
             	onChange={e => setInput(e.target.value)}
                 onKeyDown={(e) => {
                     if (e.key == "Enter") {
-                        addTodo(input)
-                    }
+                        addTodo(input, setCount(count + 1))
+                        
+                    }        
                 }}
 			/>
 			
@@ -46,10 +48,11 @@ export function App () {
                 {list.map((todo) => (
                     <li className="separar list-group-item" key={todo.id}>
                         <span>{todo.todo}</span>
-                        <button className='boton btn btn-light me-0' onClick={() => deleteTodo(todo.id)}>&times;</button>
+                        <button className='boton btn btn-light me-0' onClick={() => deleteTodo(todo.id, setCount(count - 1))}>&times;</button>
                     </li>
                 ))}
-            </ul>
+                <span className="contador">{count +" item left"}</span>
+            </ul>  
 			</div>
 		</div>
 
